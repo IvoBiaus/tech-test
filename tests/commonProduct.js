@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const Product = require('../src/product');
+const Product = require('../src/products/product');
 
 describe("Common product", function() {
 
@@ -25,7 +25,7 @@ describe("Common product", function() {
   it("have minimum price of 0", function() {
     const newProduct = new Product("Low Coverage", 2, 0);
     newProduct.updatePrice();
-    expect(newProduct.sellIn).equal(0);
+    expect(newProduct.price).equal(0);
   });
 
 });
@@ -54,7 +54,7 @@ describe("Common expired product", function() {
   it("have minimum price of 0", function() {
     const newProduct = new Product("Low Coverage", -1, 1);
     newProduct.updatePrice();
-    expect(newProduct.sellIn).equal(0);
+    expect(newProduct.price).equal(0);
   });
 
 });

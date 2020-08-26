@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const Product = require('../src/product');
+const Product = require('../src/products/product');
 const CarInsurance = require('../src/carInsurance');
 
 describe("Co Test", function() {

@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const SpecialFullCoverage = require('../src/specialFullCoverage');
+const SpecialFullCoverage = require('../src/products/specialFullCoverage');
 
 describe("Special full coverage product", function() {
 
@@ -58,26 +58,26 @@ describe("Special full coverage product", function() {
   it("have maximum price of 50 when raising price by 1", function() {
     const newProduct = new SpecialFullCoverage(15, 49);
     newProduct.updatePrice();
-    expect(newProduct.sellIn).equal(50);
+    expect(newProduct.price).equal(50);
     newProduct.updatePrice();
-    expect(newProduct.sellIn).equal(50);
+    expect(newProduct.price).equal(50);
   });
 
   
   it("have maximum price of 50 when raising price by 2", function() {
     const newProduct = new SpecialFullCoverage(10, 49);
     newProduct.updatePrice();
-    expect(newProduct.sellIn).equal(50);
+    expect(newProduct.price).equal(50);
     newProduct.updatePrice();
-    expect(newProduct.sellIn).equal(50);
+    expect(newProduct.price).equal(50);
   });
 
   it("have maximum price of 50 when raising price by 3", function() {
     const newProduct = new SpecialFullCoverage(5, 49);
     newProduct.updatePrice();
-    expect(newProduct.sellIn).equal(50);
+    expect(newProduct.price).equal(50);
     newProduct.updatePrice();
-    expect(newProduct.sellIn).equal(50);
+    expect(newProduct.price).equal(50);
   });
 
 });

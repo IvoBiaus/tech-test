@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const MegaCoverage = require('../src/megaCoverage');
+const MegaCoverage = require('../src/products/megaCoverage');
 
 describe("Mega coverage product", function() {
 
@@ -18,13 +18,13 @@ describe("Mega coverage product", function() {
     expect(newProduct.sellIn).equal(0);
   });
 
-  it("should no change price when price is updated", function() {
+  it("should keep price at 80 when price is updated", function() {
     const newProduct = new MegaCoverage(5, 10);
     newProduct.updatePrice();
     expect(newProduct.price).equal(80);
   });
 
-  it("should not change sellIn when price is updated", function() {
+  it("should keep sellIn at 0 when price is updated", function() {
     const newProduct = new MegaCoverage(5, 10);
     newProduct.updatePrice();
     expect(newProduct.sellIn).equal(0);
@@ -44,7 +44,7 @@ describe("Mega coverage expired product", function() {
     expect(newProduct.name).equal("Mega Coverage");
   });
 
-  it("should always have price 80", function() {
+  it("should keep price at 80 ", function() {
     const newProduct = new MegaCoverage(-1, 10);
     expect(newProduct.price).equal(80);
   });

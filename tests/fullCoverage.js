@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const FullCoverage = require('../src/fullCoverage');
+const FullCoverage = require('../src/products/fullCoverage');
 
 describe("Full coverage product", function() {
 
@@ -30,7 +30,7 @@ describe("Full coverage product", function() {
   it("have maximum price of 50", function() {
     const newProduct = new FullCoverage(2, 50);
     newProduct.updatePrice();
-    expect(newProduct.sellIn).equal(50);
+    expect(newProduct.price).equal(50);
   });
 
 });
@@ -64,7 +64,7 @@ describe("Full coverage expired product", function() {
   it("have maximum price of 50", function() {
     const newProduct = new FullCoverage(-1, 49);
     newProduct.updatePrice();
-    expect(newProduct.sellIn).equal(50);
+    expect(newProduct.price).equal(50);
   });
 
 });

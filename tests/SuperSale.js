@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const SuperSale = require('../src/superSale');
+const SuperSale = require('../src/products/superSale');
 
 describe("Super sale product", function() {
 
@@ -30,9 +30,9 @@ describe("Super sale product", function() {
   it("have minimum price of 0", function() {
     const newProduct = new SuperSale(2, 1);
     newProduct.updatePrice();
-    expect(newProduct.sellIn).equal(0);
+    expect(newProduct.price).equal(0);
     newProduct.updatePrice();
-    expect(newProduct.sellIn).equal(0);
+    expect(newProduct.price).equal(0);
   });
 
 });
@@ -66,9 +66,9 @@ describe("Super sale expired product", function() {
   it("have minimum price of 0", function() {
     const newProduct = new SuperSale(-1, 3);
     newProduct.updatePrice();
-    expect(newProduct.sellIn).equal(0);
+    expect(newProduct.price).equal(0);
     newProduct.updatePrice();
-    expect(newProduct.sellIn).equal(0);
+    expect(newProduct.price).equal(0);
   });
 
 });
